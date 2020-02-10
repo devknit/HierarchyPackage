@@ -49,15 +49,19 @@ namespace Hierarchy
                 staticButton = new Texture2D( 11, 10, TextureFormat.ARGB32, false, true);
                 staticButtonColors = new Color32[ 11 * 10];
             }
-
-        #if UNITY_4_6 || UNITY_4_7
+			
+    #if UNITY_4_6 || UNITY_4_7
             WritePixels( 39, 5, 4, ((staticFlags & StaticEditorFlags.LightmapStatic       ) > 0));
             WritePixels( 33, 5, 4, ((staticFlags & StaticEditorFlags.BatchingStatic       ) > 0));
-        #else   
+    #else
+       	#if UNITY_2019_1_OR_NEWER
             WritePixels( 37, 3, 4, ((staticFlags & StaticEditorFlags.ContributeGI         ) > 0));
+        #else
+        	WritePixels( 37, 3, 4, ((staticFlags & StaticEditorFlags.LightmapStatic       ) > 0));
+        #endif
             WritePixels( 33, 3, 4, ((staticFlags & StaticEditorFlags.BatchingStatic       ) > 0));
             WritePixels( 41, 3, 4, ((staticFlags & StaticEditorFlags.ReflectionProbeStatic) > 0));
-        #endif
+    #endif
             WritePixels(  0, 5, 2, ((staticFlags & StaticEditorFlags.OccludeeStatic       ) > 0));
             WritePixels(  6, 5, 2, ((staticFlags & StaticEditorFlags.OccluderStatic       ) > 0));
             WritePixels( 88, 5, 2, ((staticFlags & StaticEditorFlags.NavigationStatic     ) > 0));
@@ -79,16 +83,17 @@ namespace Hierarchy
                 GenericMenu menu = new GenericMenu();
                 menu.AddItem( new GUIContent( "Nothing"                   ), intStaticFlags == 0, StaticChangeHandler, 0);
                 menu.AddItem( new GUIContent( "Everything"                ), intStaticFlags == -1, StaticChangeHandler, -1);
-                menu.AddItem( new GUIContent( "Lightmap Static"           ), (intStaticFlags & (int)StaticEditorFlags.ContributeGI) > 0, StaticChangeHandler, (int)StaticEditorFlags.ContributeGI);
+            #if UNITY_2019_1_OR_NEWER
+                menu.AddItem( new GUIContent( "ContributeGI"              ), (intStaticFlags & (int)StaticEditorFlags.ContributeGI) > 0, StaticChangeHandler, (int)StaticEditorFlags.ContributeGI);
+            #else
+            	menu.AddItem( new GUIContent( "Lightmap Static"           ), (intStaticFlags & (int)StaticEditorFlags.LightmapStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.LightmapStatic);
+            #endif
                 menu.AddItem( new GUIContent( "Occluder Static"           ), (intStaticFlags & (int)StaticEditorFlags.OccluderStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.OccluderStatic);
+                menu.AddItem( new GUIContent( "Occludee Static"           ), (intStaticFlags & (int)StaticEditorFlags.OccludeeStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.OccludeeStatic);
                 menu.AddItem( new GUIContent( "Batching Static"           ), (intStaticFlags & (int)StaticEditorFlags.BatchingStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.BatchingStatic);
                 menu.AddItem( new GUIContent( "Navigation Static"         ), (intStaticFlags & (int)StaticEditorFlags.NavigationStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.NavigationStatic);
-                menu.AddItem( new GUIContent( "Occludee Static"           ), (intStaticFlags & (int)StaticEditorFlags.OccludeeStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.OccludeeStatic);
                 menu.AddItem( new GUIContent( "Off Mesh Link Generation"  ), (intStaticFlags & (int)StaticEditorFlags.OffMeshLinkGeneration) > 0, StaticChangeHandler, (int)StaticEditorFlags.OffMeshLinkGeneration);
-            #if UNITY_4_6 || UNITY_4_7
-            #else
                 menu.AddItem( new GUIContent( "Reflection Probe Static"   ), (intStaticFlags & (int)StaticEditorFlags.ReflectionProbeStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.ReflectionProbeStatic);
-            #endif
                 menu.ShowAsContext();
             }
         }
