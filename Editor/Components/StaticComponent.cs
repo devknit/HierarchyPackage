@@ -54,7 +54,7 @@ namespace Hierarchy
             WritePixels( 39, 5, 4, ((staticFlags & StaticEditorFlags.LightmapStatic       ) > 0));
             WritePixels( 33, 5, 4, ((staticFlags & StaticEditorFlags.BatchingStatic       ) > 0));
     #else
-       	#if UNITY_2019_1_OR_NEWER
+       	#if UNITY_2019_2_OR_NEWER
             WritePixels( 37, 3, 4, ((staticFlags & StaticEditorFlags.ContributeGI         ) > 0));
         #else
         	WritePixels( 37, 3, 4, ((staticFlags & StaticEditorFlags.LightmapStatic       ) > 0));
@@ -83,7 +83,7 @@ namespace Hierarchy
                 GenericMenu menu = new GenericMenu();
                 menu.AddItem( new GUIContent( "Nothing"                   ), intStaticFlags == 0, StaticChangeHandler, 0);
                 menu.AddItem( new GUIContent( "Everything"                ), intStaticFlags == -1, StaticChangeHandler, -1);
-            #if UNITY_2019_1_OR_NEWER
+            #if UNITY_2019_2_OR_NEWER
                 menu.AddItem( new GUIContent( "ContributeGI"              ), (intStaticFlags & (int)StaticEditorFlags.ContributeGI) > 0, StaticChangeHandler, (int)StaticEditorFlags.ContributeGI);
             #else
             	menu.AddItem( new GUIContent( "Lightmap Static"           ), (intStaticFlags & (int)StaticEditorFlags.LightmapStatic) > 0, StaticChangeHandler, (int)StaticEditorFlags.LightmapStatic);
