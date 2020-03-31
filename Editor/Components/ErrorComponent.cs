@@ -1,4 +1,4 @@
-
+ï»¿
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
@@ -113,7 +113,7 @@ namespace Hierarchy
 		}
 		bool FindError( GameObject gameObject, Component[] components, bool printError=false)
 		{
-			/* ƒ^ƒOA‚Ü‚½‚ÍƒŒƒCƒ„[‚ª–¢’è‹`‚¾‚Á‚½ê‡ */
+			/* ã‚¿ã‚°ã€ã¾ãŸã¯ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒæœªå®šç¾©ã ã£ãŸå ´åˆ */
 			if( showErrorIconWhenTagIsUndefined != false)
 			{
 				try
@@ -149,7 +149,7 @@ namespace Hierarchy
 				
 				if( component == null)
 				{
-					/* ƒRƒ“ƒ|[ƒlƒ“ƒg‚ª null ‚Ìê‡ Missing ‚Æ‚µ‚Äˆµ‚¤ */
+					/* ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒ null ã®å ´åˆ Missing ã¨ã—ã¦æ‰±ã† */
 					if( showErrorIconComponentIsMissing != false)
 					{
 						if( printError != false)
@@ -164,7 +164,7 @@ namespace Hierarchy
 				}
 				else if( showErrorTypeReferenceIsMissing != false)
 				{
-					/* ‘ÎÛŠO‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğƒGƒ‰[’T¸‘ÎÛ‚©‚çœ‹‚·‚é */
+					/* å¯¾è±¡å¤–ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ã‚¨ãƒ©ãƒ¼æ¢æŸ»å¯¾è±¡ã‹ã‚‰é™¤å»ã™ã‚‹ */
 					if( ignoreErrorOfMonoBehaviours != null)
 					{
 						int i1;

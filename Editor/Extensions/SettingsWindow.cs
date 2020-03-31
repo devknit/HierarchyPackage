@@ -1,4 +1,4 @@
-
+ï»¿
 using UnityEngine;
 using UnityEditor;
 using System;
@@ -532,8 +532,8 @@ namespace Hierarchy
 		}
 		void DrawTextField( string label, Setting setting)
 		{
-			string currentValue = Settings.Instance.Get<string>(@setting);
-			string newValue = EditorGUI.TextField(@GetControlRect( 0, 16, 34, 6), label, currentValue);
+			string currentValue = Settings.Instance.Get<string>(ã€€setting);
+			string newValue = EditorGUI.TextField(ã€€GetControlRect( 0, 16, 34, 6), label, currentValue);
 			if( currentValue.Equals( newValue) == false)
 			{
 				Settings.Instance.Set( setting, newValue);
@@ -604,320 +604,320 @@ namespace Hierarchy
 		/* COMPONENTS */
 		string LabelComponentSetting{
 			get{ switch( language){
-				case 1: return "Šg’£‹@”\İ’è";
+				case 1: return "æ‹¡å¼µæ©Ÿèƒ½è¨­å®š";
 				default: return "COMPONENTS SETTINGS";
 		}}}
 		/* TreeMapComponent */
 		string LabelTreeMapComponent{
 			get{ switch( language){
-				case 1: return "ƒcƒŠ[ƒrƒ…[";
+				case 1: return "ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼";
 				default: return "Hierarchy Tree";
 		}}}
 		string LabelTreeMapColor{
 			get{ switch( language){
-				case 1: return "ƒm[ƒhƒ‰ƒCƒ“ƒJƒ‰[";
+				case 1: return "ãƒãƒ¼ãƒ‰ãƒ©ã‚¤ãƒ³ã‚«ãƒ©ãƒ¼";
 				default: return "Node line color";
 		}}}
 		string LabelTreeMapTransparentBackground{
 			get{ switch( language){
-				case 1: return "“§–¾‚È”wŒi";
+				case 1: return "é€æ˜ãªèƒŒæ™¯";
 				default: return "Transparent background";
 		}}}
 		string LabelTreeMapEnhanced{
 			get{ switch( language){
-				case 1: return "ü‚ğI’[‚Å~‚ß‚é";
+				case 1: return "ç·šã‚’çµ‚ç«¯ã§æ­¢ã‚ã‚‹";
 				default: return "Enhanced (\"Transform Sort\" only)";
 		}}}
 		/* SeparatorComponent */
 		string LabelSeparatorComponent{
 			get{ switch( language){
-				case 1: return "ƒZƒpƒŒ[ƒ^[";
+				case 1: return "ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ãƒ¼";
 				default: return "Separator";
 		}}}
 		string LabelSeparatorColor{
 			get{ switch( language){
-				case 1: return "ƒZƒpƒŒ[ƒ^[ƒJƒ‰[";
+				case 1: return "ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ãƒ¼ã‚«ãƒ©ãƒ¼";
 				default: return "Separator Color";
 		}}}
 		string LabelSeparatorShowRowShading{
 			get{ switch( language){
-				case 1: return "s‚Ì–ÔŠ|‚¯";
+				case 1: return "è¡Œã®ç¶²æ›ã‘";
 				default: return "Row shading";
 		}}}
 		string LabelSeparatorEvenRowShadingColor{
 			get{ switch( language){
-				case 1: return "‹ô”s‚Ì–ÔŠ|‚¯F";
+				case 1: return "å¶æ•°è¡Œã®ç¶²æ›ã‘è‰²";
 				default: return "Even row shading color";
 		}}}
 		string LabelSeparatorOddRowShadingColor{
 			get{ switch( language){
-				case 1: return "Šï”s‚Ì–ÔŠ|‚¯F";
+				case 1: return "å¥‡æ•°è¡Œã®ç¶²æ›ã‘è‰²";
 				default: return "Odd row shading color";
 		}}}
 		/* ActivityComponent */
 		string LabelActivityComponent{
 			get{ switch( language){
-				case 1: return "ƒAƒNƒeƒBƒu";
+				case 1: return "ã‚¢ã‚¯ãƒ†ã‚£ãƒ–";
 				default: return "Activity";
 		}}}
 		string LabelActivityEditable{
 			get{ switch( language){
-				case 1: return "•ÒW‰Â”\";
+				case 1: return "ç·¨é›†å¯èƒ½";
 				default: return "Editable";
 		}}}
 		string LabelActivityShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		/* LockComponent */
 		string LabelLockComponent{
 			get{ switch( language){
-				case 1: return "Inspectorã‚Ì•ÒW—}~";
+				case 1: return "Inspectorä¸Šã®ç·¨é›†æŠ‘æ­¢";
 				default: return "Lock";
 		}}}
 		string LabelLockEditable{
 			get{ switch( language){
-				case 1: return "•ÒW‰Â”\";
+				case 1: return "ç·¨é›†å¯èƒ½";
 				default: return "Editable";
 		}}}
 		string LabelLockShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		/* StaticComponent */
 		string LabelStaticComponent{
 			get{ switch( language){
-				case 1: return "Ã“IƒQ[ƒ€ƒIƒuƒWƒFƒNƒg";
+				case 1: return "é™çš„ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ";
 				default: return "Static";
 		}}}
 		string LabelStaticEditable{
 			get{ switch( language){
-				case 1: return "•ÒW‰Â”\";
+				case 1: return "ç·¨é›†å¯èƒ½";
 				default: return "Editable";
 		}}}
 		string LabelStaticShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		/* ErrorComponent */
 		string LabelErrorComponent{
 			get{ switch( language){
-				case 1: return "ƒGƒ‰[”»’è";
+				case 1: return "ã‚¨ãƒ©ãƒ¼åˆ¤å®š";
 				default: return "Error";
 		}}}
 		string LabelErrorShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		string LabelErrorShowForDisabledGameObjects{
 			get{ switch( language){
-				case 1: return "–³Œø‰»‚³‚ê‚Ä‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚à‘ÎÛ‚É‚·‚é";
+				case 1: return "ç„¡åŠ¹åŒ–ã•ã‚Œã¦ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚‚å¯¾è±¡ã«ã™ã‚‹";
 				default: return "Show error icon for disabled GameObjects";
 		}}}
 		string LabelErrorShowForDisabledComponents{
 			get{ switch( language){
-				case 1: return "–³Œø‰»‚³‚ê‚Ä‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚à‘ÎÛ‚É‚·‚é";
+				case 1: return "ç„¡åŠ¹åŒ–ã•ã‚Œã¦ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚‚å¯¾è±¡ã«ã™ã‚‹";
 				default: return "Show error icon for disabled components";
 		}}}
 		string LabelErrorShowIconOnParent{
 			get{ switch( language){
-				case 1: return "[‚•‰‰×]eŠK‘w‚É‚àƒGƒ‰[ƒAƒCƒRƒ“‚ğ•\¦‚·‚é";
+				case 1: return "[é«˜è² è·]è¦ªéšå±¤ã«ã‚‚ã‚¨ãƒ©ãƒ¼ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹";
 				default: return "Show error icon up of hierarchy (very slow)";
 		}}}
 		string LabelErrorFollowing{
 			get{ switch( language){
-				case 1: return "ƒGƒ‰[‚Æ‚µ‚Äˆµ‚¤ó‘Ô:";
+				case 1: return "ã‚¨ãƒ©ãƒ¼ã¨ã—ã¦æ‰±ã†çŠ¶æ…‹:";
 				default: return "Show error icon for the following:";
 		}}}
 		string LabelErrorShowWhenTagOrLayerIsUndefined{
 			get{ switch( language){
-				case 1: return "- ƒ^ƒO‚Ü‚½‚ÍƒŒƒCƒ„[‚ª–¢’è‹`";
+				case 1: return "- ã‚¿ã‚°ã¾ãŸã¯ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒæœªå®šç¾©";
 				default: return "- tag or layer is undefined";
 		}}}
 		string LabelErrorShowComponentIsMissing{
 			get{ switch( language){
-				case 1: return "- ƒRƒ“ƒ|[ƒlƒ“ƒg‚ª Missing";
+				case 1: return "- ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒ Missing";
 				default: return "- component is missing";
 		}}}
 		string LabelErrorShowReferenceIsMissing{
 			get{ switch( language){
-				case 1: return "- [‚•‰‰×]QÆ‚ª Missing";
+				case 1: return "- [é«˜è² è·]å‚ç…§ãŒ Missing";
 				default: return "- reference is missing (very slow)";
 		}}}
 		string LabelErrorIgnoreString{
 			get{ switch( language){
-				case 1: return "‘ÎÛŠOƒRƒ“ƒ|[ƒlƒ“ƒg–¼";
+				case 1: return "å¯¾è±¡å¤–ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå";
 				default: return "Ignore packages/classes";
 		}}}
 		/* RendererComponent */
 		string LabelRendererComponent{
 			get{ switch( language){
-				case 1: return "ƒŒƒ“ƒ_ƒ‰[";
+				case 1: return "ãƒ¬ãƒ³ãƒ€ãƒ©ãƒ¼";
 				default: return "Renderer";
 		}}}
 		string LabelRendererEditable{
 			get{ switch( language){
-				case 1: return "•ÒW‰Â”\";
+				case 1: return "ç·¨é›†å¯èƒ½";
 				default: return "Editable";
 		}}}
 		string LabelRendererShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		/* TagAndLayerComponent */
 		string LabelTagAndLayerComponent{
 			get{ switch( language){
-				case 1: return "ƒ^ƒO•ƒŒƒCƒ„[";
+				case 1: return "ã‚¿ã‚°ï¼†ãƒ¬ã‚¤ãƒ¤ãƒ¼";
 				default: return "TagAndLayer";
 		}}}
 		string LabelTagAndLayerEditable{
 			get{ switch( language){
-				case 1: return "•ÒW‰Â”\";
+				case 1: return "ç·¨é›†å¯èƒ½";
 				default: return "Editable";
 		}}}
 		string LabelTagAndLayerShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		string LabelTagAndLayerSizeShowType{
 			get{ switch( language){
-				case 1: return "•\¦Œ`®";
+				case 1: return "è¡¨ç¤ºå½¢å¼";
 				default: return "Show";
 		}}}
 		string LabelTagAndLayerType{
 			get{ switch( language){
-				case 1: return "‰Šú’l‚Ì•\¦";
+				case 1: return "åˆæœŸå€¤æ™‚ã®è¡¨ç¤º";
 				default: return "Show tag and layer";
 		}}}
 		string LabelTagAndLayerSizeValueType{
 			get{ switch( language){
-				case 1: return "•\¦•‚Ì’PˆÊ";
+				case 1: return "è¡¨ç¤ºå¹…ã®å˜ä½";
 				default: return "Unit of width";
 		}}}
 		string LabelTagAndLayerSizeValuePixel{
 			get{ switch( language){
-				case 1: return "•(px)";
+				case 1: return "å¹…(px)";
 				default: return "Width in pixels";
 		}}}
 		string LabelTagAndLayerSizeValuePercent{
 			get{ switch( language){
-				case 1: return "•(“)";
+				case 1: return "å¹…(ï¼…)";
 				default: return "Percentage width";
 		}}}
 		string LabelTagAndLayerAligment{
 			get{ switch( language){
-				case 1: return "…•½•ûŒü‚Ì•\¦Šî“_";
+				case 1: return "æ°´å¹³æ–¹å‘ã®è¡¨ç¤ºåŸºç‚¹";
 				default: return "Alignment";
 		}}}
 		string LabelTagAndLayerLabelSize{
 			get{ switch( language){
-				case 1: return "•\¦ƒTƒCƒY";
+				case 1: return "è¡¨ç¤ºã‚µã‚¤ã‚º";
 				default: return "Label size";
 		}}}
 		string LabelTagAndLayerLabelAlpha{
 			get{ switch( language){
-				case 1: return "‰Šú’l‚Ì•s“§–¾“x";
+				case 1: return "åˆæœŸå€¤æ™‚ã®ä¸é€æ˜åº¦";
 				default: return "Label alpha if default";
 		}}}
 		string LabelTagAndLayerTagLabelColor{
 			get{ switch( language){
-				case 1: return "ƒ^ƒO‚Ì•¶šF";
+				case 1: return "ã‚¿ã‚°ã®æ–‡å­—è‰²";
 				default: return "Tag label color";
 		}}}
 		string LabelTagAndLayerLayerLabelColor{
 			get{ switch( language){
-				case 1: return "ƒŒƒCƒ„[‚Ì•¶šF";
+				case 1: return "ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–‡å­—è‰²";
 				default: return "Layer label color";
 		}}}
 		/* ComponentsComponent */
 		string LabelComponentsComponent{
 			get{ switch( language){
-				case 1: return "ƒRƒ“ƒ|[ƒlƒ“ƒg";
+				case 1: return "ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ";
 				default: return "Components";
 		}}}
 		string LabelComponentsEditable{
 			get{ switch( language){
-				case 1: return "•ÒW‰Â”\";
+				case 1: return "ç·¨é›†å¯èƒ½";
 				default: return "Editable";
 		}}}
 		string LabelComponentsShowDuringPlayMode{
 			get{ switch( language){
-				case 1: return "Ä¶ƒ‚[ƒh’†‚É‚à“®ì‚·‚é";
+				case 1: return "å†ç”Ÿãƒ¢ãƒ¼ãƒ‰ä¸­ã«ã‚‚å‹•ä½œã™ã‚‹";
 				default: return "Show component during play mode";
 		}}}
 		string LabelComponentsIconSize{
 			get{ switch( language){
-				case 1: return "ƒAƒCƒRƒ“‚Ì•\¦ƒTƒCƒY";
+				case 1: return "ã‚¢ã‚¤ã‚³ãƒ³ã®è¡¨ç¤ºã‚µã‚¤ã‚º";
 				default: return "Icon size";
 		}}}
 		string LabelComponentsIgnore{
 			get{ switch( language){
-				case 1: return "”ñ•\¦ƒRƒ“ƒ|[ƒlƒ“ƒg–¼";
+				case 1: return "éè¡¨ç¤ºã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå";
 				default: return "Ignore packages/classes";
 		}}}
 		/* ORDER */
 		string LabelOrderOfComponents{
 			get{ switch( language){
-				case 1: return "Šg’£‹@”\‚Ì•\¦‡˜";
+				case 1: return "æ‹¡å¼µæ©Ÿèƒ½ã®è¡¨ç¤ºé †åº";
 				default: return "ORDER OF COMPONENTS";
 		}}}
 		/* ADDITIONAL */
 		string LabelAdditionalSettings{
 			get{ switch( language){
-				case 1: return "‚»‚Ì‘¼";
+				case 1: return "ãã®ä»–";
 				default: return "ADDITIONAL SETTINGS";
 		}}}
 		string LabelAdditionalHierarchyExtension{
 			get{ switch( language){
-				case 1: return "Šg’£‹@”\‚ğ—LŒø‚É‚·‚é";
+				case 1: return "æ‹¡å¼µæ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹";
 				default: return "Enable extensions";
 		}}}
 		string LabelAdditionalHideIconsIfNotFit{
 			get{ switch( language){
-				case 1: return "û‚Ü‚ç‚È‚¢ƒAƒCƒRƒ“‚ğ”ñ•\¦‚É‚·‚é";
+				case 1: return "åã¾ã‚‰ãªã„ã‚¢ã‚¤ã‚³ãƒ³ã‚’éè¡¨ç¤ºã«ã™ã‚‹";
 				default: return "Hide icons if not fit";
 		}}}
 		string LabelAdditionalIdentation{
 			get{ switch( language){
-				case 1: return "ƒIƒtƒZƒbƒg•(px)";
+				case 1: return "ã‚ªãƒ•ã‚»ãƒƒãƒˆå¹…(px)";
 				default: return "Right indent";
 		}}}
 		string LabelAdditionalShowModifierWarning{
 			get{ switch( language){
-				case 1: return "Cüq‚ğg—p‚µ‚Äó‘Ô‚ğØ‚è‘Ö‚¦‚éÛ‚ÉŒx‚ğ•\¦‚·‚é";
+				case 1: return "ä¿®é£¾å­ã‚’ä½¿ç”¨ã—ã¦çŠ¶æ…‹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹éš›ã«è­¦å‘Šã‚’è¡¨ç¤ºã™ã‚‹";
 				default: return "Show warning when using modifiers + click";
 		}}}
 		string LabelAdditionalBackgroundColor{
 			get{ switch( language){
-				case 1: return "”wŒiF";
+				case 1: return "èƒŒæ™¯è‰²";
 				default: return "Background color";
 		}}}
 		string LabelAdditionalActiveColor{
 			get{ switch( language){
-				case 1: return "—LŒø‚ÌF";
+				case 1: return "æœ‰åŠ¹æ™‚ã®è‰²";
 				default: return "Active color";
 		}}}
 		string LabelAdditionalInactiveColor{
 			get{ switch( language){
-				case 1: return "–³Œø‚ÌF";
+				case 1: return "ç„¡åŠ¹æ™‚ã®è‰²";
 				default: return "Inactive color";
 		}}}
 		
 		/* Restore */
 		string LabelRestoreCaption{
 			get{ switch( language){
-				case 1: return "•œŒ³";
+				case 1: return "å¾©å…ƒ";
 				default: return "Restore";
 		}}}
 		string LabelRestoreMessage{
 			get{ switch( language){
-				case 1: return "ƒfƒtƒHƒ‹ƒg‚Ìİ’è‚ğ•œŒ³‚µ‚Ü‚·‚©H";
+				case 1: return "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è¨­å®šã‚’å¾©å…ƒã—ã¾ã™ã‹ï¼Ÿ";
 				default: return "Restore default settings?";
 		}}}
 		

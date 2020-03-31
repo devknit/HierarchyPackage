@@ -1,4 +1,4 @@
-# Hierarchy
+﻿# Hierarchy
 
 Unity の Hierarchy ウィンドウを拡張するパッケージです。
 
