@@ -209,11 +209,11 @@ namespace Hierarchy
 			InitSetting( Setting.kStaticEditable							 , true);
 			InitSetting( Setting.kStaticShowDuringPlayMode					 , false);
 			
-			InitSetting( Setting.kErrorShow 								 , false);
+			InitSetting( Setting.kErrorShow 								 , true);
 			InitSetting( Setting.kErrorShowDuringPlayMode					 , false);
 			InitSetting( Setting.kErrorShowForDisabledComponents			 , true);
 			InitSetting( Setting.kErrorShowForDisabledGameObjects			 , true);
-			InitSetting( Setting.kErrorShowIconOnParent						 , false);
+			InitSetting( Setting.kErrorShowIconOnParent						 , true);
 			InitSetting( Setting.kErrorShowWhenTagOrLayerIsUndefined		 , true);
 			InitSetting( Setting.kErrorShowComponentIsMissing				 , true);
 			InitSetting( Setting.kErrorShowReferenceIsMissing				 , false);

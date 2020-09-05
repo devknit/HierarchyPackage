@@ -27,6 +27,28 @@ namespace Hierarchy
         {
             EditorApplication.RepaintHierarchyWindow();          
         }
+		[MenuItem( "GameObject/Remove Missing Scripts")]
+		static void RemoveMissingScripts()
+        {
+			if( Selection.activeObject is GameObject gameObject)
+			{
+				if( RemoveMissingScripts( gameObject.transform) > 0)
+				{
+					EditorUtility.SetDirty( gameObject);
+				}
+			}
+		}
+		static int RemoveMissingScripts( Transform transform)
+		{
+			int count = GameObjectUtility.RemoveMonoBehavioursWithMissingScript( transform.gameObject);
+			
+			foreach( Transform child in transform)
+			{
+				count += RemoveMissingScripts( child);
+			}
+			return count;
+		}
+		
         static Extension extension;
 	}
 }
