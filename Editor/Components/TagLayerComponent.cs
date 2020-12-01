@@ -44,7 +44,7 @@ namespace Hierarchy
 			tagColor = Settings.Instance.GetColor( Setting.kTagAndLayerTagLabelColor);
 			layerColor = Settings.Instance.GetColor( Setting.kTagAndLayerLayerLabelColor);
 			labelAlpha = Settings.Instance.Get<float>( Setting.kTagAndLayerLabelAlpha);
-
+			
 			HierarchyTagAndLayerAligment aligment = (HierarchyTagAndLayerAligment)Settings.Instance.Get<int>( Setting.kTagAndLayerAligment);
 			switch( aligment)
 			{
@@ -69,7 +69,7 @@ namespace Hierarchy
 		{
 			float textWidth = sizeIsPixel ? pixelSize : percentSize * rect.x;
 			rect.width = textWidth + 4;
-
+			
 			if( maxWidth < rect.width)
 			{
 				return LayoutStatus.kFailed;
@@ -81,13 +81,13 @@ namespace Hierarchy
 				rect.y = curRect.y;
 				rect.y += (EditorGUIUtility.singleLineHeight - rect.height) * 0.5f;
 				//rect.height = EditorGUIUtility.singleLineHeight;
-
+				
 				layer  = gameObject.layer; 
 				tag = GetTagName( gameObject);			   
 				
 				needDrawTag = (showType != HierarchyTagAndLayerShowType.kLayer) && ((showAlways != false || tag != "Untagged"));
 				needDrawLayer = (showType != HierarchyTagAndLayerShowType.kTag) && ((showAlways != false || layer != 0));
-
+				
 			#if UNITY_2019_1_OR_NEWER
 				if( labelSize == HierarchyTagAndLayerLabelSize.kBig
 				|| (labelSize == HierarchyTagAndLayerLabelSize.kBigIfSpecifiedOnlyTagOrLayer && needDrawTag != needDrawLayer))
@@ -128,7 +128,7 @@ namespace Hierarchy
 				labelStyle.normal.textColor = tagColor;
 				EditorGUI.LabelField( tagRect, tag, labelStyle);
 			}
-
+			
 			if( needDrawLayer != false)
 			{
 				layerColor.a = (layer == 0)? labelAlpha : 1.0f;

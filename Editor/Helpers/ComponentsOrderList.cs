@@ -15,14 +15,14 @@ namespace Hierarchy
 		public void Draw( Rect rect, string[] componentIds)
 		{
 			Event currentEvent = Event.current;
-
+			
 			int currentMouseIndex = Mathf.Clamp(Mathf.RoundToInt((currentEvent.mousePosition.y - dragOffset - rect.y) / 18), 0, componentIds.Length - 1);
-
+			
 			if( dragAndDrop != false && currentEvent.type == EventType.MouseUp)		
 			{
 				dragAndDrop = false;
 				window.Repaint();
-
+				
 				if( currentMouseIndex != originalDragIndex)
 				{
 					string newIconOrder = "";

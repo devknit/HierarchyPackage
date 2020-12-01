@@ -1,13 +1,8 @@
 {
-    "name": "com.devknit.hierarchy",
-    "displayName": "Hierarchy",
-    "version": "1.0.0",
-    "unity": "2019.3",
-    "description": "Hierarchy extensions",
-    "keywords": [
-		"hierarchy"
-	],
-    "category": "Editor",
-    "dependencies": {
-    }
+  "name": "com.devknit.hierarchy",
+  "displayName": "Hierarchy",
+  "version": "1.0.0",
+  "unity": "2018.4",
+  "description": "Hierarchy extensions",
+  "type": "tool"
 }

@@ -13,7 +13,7 @@ namespace Hierarchy
 		{
 			EditorWindow window = EditorWindow.GetWindow( typeof( SettingsWindow));			
 			window.minSize = new Vector2( 350, 50);
-
+			
 		#if UNITY_4_6 || UNITY_4_7 || UNITY_5_0
 			window.title = "Hierarchy Settings";
 		#else
@@ -37,7 +37,7 @@ namespace Hierarchy
 			{
 				Initialize();
 			}
-
+			
 			indentLevel = 8;
 			scrollPosition = EditorGUILayout.BeginScrollView( scrollPosition);
 			{
@@ -47,10 +47,10 @@ namespace Hierarchy
 					totalWidth = targetRect.width + 8;
 				}
 				lastRect = new Rect( 0, 1, 0, 0);
-
+				
 				DrawSection( LabelComponentSetting);
 				float sectionStartY = lastRect.y + lastRect.height;
-
+				
 				DrawTreeMapComponentSettings();
 				DrawSeparator();
 				DrawSeparatorComponentSettings();
@@ -73,7 +73,7 @@ namespace Hierarchy
 			//	DrawSeparator();
 				DrawComponentsComponentSettings();
 				DrawLeftLine( sectionStartY, lastRect.y + lastRect.height, separatorColor);
-
+				
 				/* ORDER */
 				DrawSection( LabelOrderOfComponents); 		
 				sectionStartY = lastRect.y + lastRect.height;
@@ -81,14 +81,14 @@ namespace Hierarchy
 				DrawOrderSettings();
 				DrawSpace( 6);	   
 				DrawLeftLine( sectionStartY, lastRect.y + lastRect.height, separatorColor);
-
+				
 				/* ADDITIONAL */
 				DrawSection( LabelAdditionalSettings); 			
 				sectionStartY = lastRect.y + lastRect.height;
 				DrawSpace( 3);  
 				DrawAdditionalSettings();
 				DrawLeftLine(sectionStartY, lastRect.y + lastRect.height + 4, separatorColor);
-
+				
 				indentLevel -= 1;
 			}
 			EditorGUILayout.EndScrollView();
@@ -125,7 +125,7 @@ namespace Hierarchy
 					Settings.Instance.Restore( Setting.kSeparatorEvenRowShadingColor);
 				}
 				bool rowShading = Settings.Instance.Get<bool>( Setting.kSeparatorShowRowShading);
-
+				
 				DrawBackground( rect.x, rect.y, rect.width, 18 * (rowShading ? 4 : 2) + 5);
 				DrawSpace( 4);
 				DrawColorPicker( LabelSeparatorColor, Setting.kSeparatorColor);
@@ -264,10 +264,10 @@ namespace Hierarchy
 				DrawCheckBoxRight( LabelTagAndLayerShowDuringPlayMode, Setting.kTagAndLayerShowDuringPlayMode);  
 				DrawEnum( LabelTagAndLayerSizeShowType, Setting.kTagAndLayerSizeShowType, typeof( HierarchyTagAndLayerShowType));
 				DrawEnum( LabelTagAndLayerType, Setting.kTagAndLayerType, typeof( HierarchyTagAndLayerType));
-
+				
 				var newTagAndLayerSizeValueType = (HierarchyTagAndLayerSizeType)DrawEnum( 
 						LabelTagAndLayerSizeValueType, Setting.kTagAndLayerSizeValueType, typeof( HierarchyTagAndLayerSizeType));
-
+				
 				if( newTagAndLayerSizeValueType == HierarchyTagAndLayerSizeType.kPixel)
 				{
 					DrawIntSlider( LabelTagAndLayerSizeValuePixel, Setting.kTagAndLayerSizeValuePixel, 5, 250);
@@ -276,7 +276,7 @@ namespace Hierarchy
 				{
 					DrawFloatSlider( LabelTagAndLayerSizeValuePercent, Setting.kTagAndLayerSizeValuePercent, 0, 0.5f);
 				}
-						   
+				
 				DrawEnum( LabelTagAndLayerAligment, Setting.kTagAndLayerAligment, typeof( HierarchyTagAndLayerAligment));
 				DrawEnum( LabelTagAndLayerLabelSize, Setting.kTagAndLayerLabelSize, typeof( HierarchyTagAndLayerLabelSize));
 				DrawFloatSlider( LabelTagAndLayerLabelAlpha, Setting.kTagAndLayerLabelAlpha, 0, 1.0f);
@@ -369,7 +369,7 @@ namespace Hierarchy
 			{
 				Settings.Instance.Restore( Setting.kComponentsOrder);
 			}
-
+			
 			indentLevel += 4;
 			
 			string componentOrder = Settings.Instance.Get<string>(Setting.kComponentsOrder);
@@ -407,7 +407,7 @@ namespace Hierarchy
 			DrawColorPicker( LabelAdditionalInactiveColor, Setting.kAdditionalInactiveColor);
 			DrawSpace( 1);
 		}
-
+		
 		void DrawSection( string title)
 		{
 			Rect rect = GetControlRect( 0, 24, -3, 0);
@@ -438,31 +438,31 @@ namespace Hierarchy
 		bool DrawComponentCheckBox( string label, Setting setting)
 		{
 			indentLevel += 8;
-
+			
 			Rect rect = GetControlRect( 0, 28, 0, 0);
-
+			
 			float rectWidth = rect.width;
 			bool isChecked = Settings.Instance.Get<bool>( setting);
-
+			
 			rect.x -= 1;
 			rect.y += 7;
 			rect.width	= 14;
 			rect.height = 14;
-
+			
 			if( GUI.Button( rect, isChecked ? checkBoxChecked : checkBoxUnchecked, GUIStyle.none) != false)
 			{
 				Settings.Instance.Set( setting, !isChecked);
 			}
-
+			
 			rect.x += 14 + 10;
 			rect.width = rectWidth - 14 - 8;
 			rect.y -= (EditorGUIUtility.singleLineHeight - rect.height) * 0.5f;
 			rect.height = EditorGUIUtility.singleLineHeight;
-
-			EditorGUI.LabelField( rect, label);
-
+			
+				EditorGUI.LabelField( rect, label);
+			
 			indentLevel -= 8;
-
+			
 			return isChecked;
 		}
 		bool DrawCheckBoxRight( string label, Setting setting)
@@ -470,7 +470,7 @@ namespace Hierarchy
 			Rect rect = GetControlRect( 0, 18, 34, 6);
 			bool result = false;
 			bool isChecked = Settings.Instance.Get<bool>( setting);
-
+			
 			float tempX = rect.x;
 			rect.x += rect.width - 14;
 			rect.y += 1;
@@ -482,14 +482,14 @@ namespace Hierarchy
 				Settings.Instance.Set( setting, !isChecked);
 				result = true;
 			}
-
+			
 			rect.width = rect.x - tempX - 4;
 			rect.x = tempX;
 			rect.y -= (EditorGUIUtility.singleLineHeight - rect.height) * 0.5f;
 			rect.height = EditorGUIUtility.singleLineHeight;
 			
 			EditorGUI.LabelField( rect, label);
-
+			
 			return result;
 		}
 		void DrawSpace( int value)
@@ -522,7 +522,7 @@ namespace Hierarchy
 			}
 			return false;
 		}
-
+		
 		void DrawLabel( string label)
 		{
 			Rect rect = GetControlRect( 0, 16, 34, 6);

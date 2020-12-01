@@ -9,10 +9,10 @@ namespace Hierarchy
 		public ActivityComponent()
 		{
 			rect.width = 18;
-
+			
 			activityButtonTexture = Resources.Instance.GetTexture( Image.kActivityButton);
 			activityOffButtonTexture = Resources.Instance.GetTexture( Image.kActivityOffButton);
-
+			
 			Settings.Instance.AddEventListener( Setting.kActivityShow, SettingsChanged);
 			Settings.Instance.AddEventListener( Setting.kActivityEditable, SettingsChanged);
 			Settings.Instance.AddEventListener( Setting.kActivityShowDuringPlayMode, SettingsChanged);

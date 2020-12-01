@@ -30,9 +30,9 @@ namespace Hierarchy
 			rect.width = selectionRect.width + selectionRect.x;
 			rect.height = 1;
 			rect.x = 0;
-
+			
 			EditorGUI.DrawRect( rect, separatorColor);
-
+			
 			if( showRowShading != false)
 			{
 				selectionRect.width += selectionRect.x;

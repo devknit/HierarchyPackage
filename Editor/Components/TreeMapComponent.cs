@@ -22,7 +22,7 @@ namespace Hierarchy
 			rect.height = 16;
 			
 			showComponentDuringPlayMode = true;
-
+			
 			Settings.Instance.AddEventListener( Setting.kAdditionalBackgroundColor, SettingsChanged);
 			Settings.Instance.AddEventListener( Setting.kTreeMapShow, SettingsChanged);
 			Settings.Instance.AddEventListener( Setting.kTreeMapColor, SettingsChanged);
@@ -55,12 +55,12 @@ namespace Hierarchy
 		{
 			int childCount = gameObject.transform.childCount;
 			int level = Mathf.RoundToInt( selectionRect.x / 14.0f);
-
+			
 			if( enhanced != false)
 			{
 				Transform gameObjectTransform = gameObject.transform;
 				Transform parentTransform = null;
-
+				
 				for( int i0 = 0, i1 = level - 1; i1 >= 0; ++i0, --i1)
 				{
 					rect.x = 14 * i1;

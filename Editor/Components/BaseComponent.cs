@@ -138,7 +138,7 @@ namespace Hierarchy
 		}
 		
 		public Rect rect = new Rect( 0, 0, EditorGUIUtility.singleLineHeight, EditorGUIUtility.singleLineHeight);
-
+		
 		protected bool enabled = false;
 		protected bool editable = false;
 		protected bool showComponentDuringPlayMode = false;

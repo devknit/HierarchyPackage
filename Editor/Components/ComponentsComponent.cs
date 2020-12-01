@@ -13,12 +13,12 @@ namespace Hierarchy
 			grayColor = Resources.Instance.GetColor( ColorTone.kGray);
 			backgroundDarkColor = Resources.Instance.GetColor( ColorTone.kBackgroundDark);
 			componentIcon = Resources.Instance.GetTexture( Image.kComponentUnknownIcon);
-
+			
 			hintLabelStyle = new GUIStyle();
 			hintLabelStyle.normal.textColor = grayColor;
 			hintLabelStyle.fontSize = 11;
 			hintLabelStyle.clipping = TextClipping.Clip;  
-
+			
 			Settings.Instance.AddEventListener( Setting.kComponentsShow, SettingsChanged);
 			Settings.Instance.AddEventListener( Setting.kComponentsEditable, SettingsChanged);
 			Settings.Instance.AddEventListener( Setting.kComponentsShowDuringPlayMode, SettingsChanged);
@@ -48,7 +48,7 @@ namespace Hierarchy
 		public override LayoutStatus Layout( GameObject gameObject, Rect selectionRect, ref Rect curRect, float maxWidth)
 		{
 			Component[] currentComponents = gameObject.GetComponents<Component>();
-
+			
 			components.Clear();
 			
 			if( ignoreScripts != null)
@@ -81,21 +81,21 @@ namespace Hierarchy
 			{
 				components.AddRange( currentComponents);
 			}
-
+			
 			int maxComponentsCount = Mathf.FloorToInt( (maxWidth - 2) / rect.width);
 			componentsToDraw = System.Math.Min( maxComponentsCount, components.Count - 1);
-
+			
 			float totalWidth = 2 + rect.width * componentsToDraw;
-	
+			
 			curRect.x -= totalWidth;
-
+			
 			rect.x = curRect.x;
 			rect.y = curRect.y - (rect.height - 16) / 2;
-
+			
 			eventRect.width = totalWidth;
 			eventRect.x = rect.x;
 			eventRect.y = rect.y;
-
+			
 			if( maxComponentsCount >= components.Count - 1)
 			{
 				return LayoutStatus.kSuccess;
@@ -127,14 +127,14 @@ namespace Hierarchy
 				catch
 				{
 				}
-
+				
 				Color color = GUI.color;
 				color.a = enabled ? 1f : 0.3f;
 				GUI.color = color;
 				GUI.DrawTexture( rect, content.image == null ? componentIcon : content.image, ScaleMode.ScaleToFit);
 				color.a = 1;
 				GUI.color = color;
-
+				
 				if( rect.Contains( Event.current.mousePosition) != false)
 				{		 
 					string componentName = "Missing script";
@@ -142,12 +142,12 @@ namespace Hierarchy
 					{
 						componentName = component.GetType().Name;
 					}
-
+					
 					int labelWidth = Mathf.CeilToInt( hintLabelStyle.CalcSize( new GUIContent( componentName)).x); 				   
 					selectionRect.x = rect.x - labelWidth / 2 - 4;
 					selectionRect.width = labelWidth + 8;
 					selectionRect.height -= 1;
-
+					
 					if( selectionRect.y > 16)
 					{
 						selectionRect.y -= 16;
@@ -156,7 +156,7 @@ namespace Hierarchy
 					{
 						selectionRect.x += labelWidth / 2 + 18;
 					}
-
+					
 					EditorGUI.DrawRect( selectionRect, backgroundDarkColor);
 					selectionRect.x += 4;
 					selectionRect.y += (EditorGUIUtility.singleLineHeight - rect.height) * 0.5f;
@@ -173,7 +173,7 @@ namespace Hierarchy
 				if( currentEvent.type == EventType.MouseDown)
 				{
 					int id = Mathf.FloorToInt( (currentEvent.mousePosition.x - eventRect.x) / rect.width) + components.Count - 1 - componentsToDraw + 1;
-
+					
 					try
 					{
 						Component component = components[ id];
@@ -182,8 +182,9 @@ namespace Hierarchy
 						Undo.RecordObject( component, "Change component enabled");
 						propertyInfo.GetSetMethod().Invoke( component, new object[]{ !enabled });
 					}
-					catch {}
-
+					catch
+					{
+					}
 					EditorUtility.SetDirty( gameObject);
 				}
 				currentEvent.Use();

@@ -11,7 +11,6 @@ namespace Hierarchy
 		{
             EditorApplication.hierarchyWindowItemOnGUI -= HierarchyWindowItemOnGUIHandler;
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUIHandler;
-
             Undo.undoRedoPerformed -= UndoRedoPerformed;
             Undo.undoRedoPerformed += UndoRedoPerformed;
 		}

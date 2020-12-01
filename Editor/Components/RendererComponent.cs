@@ -9,7 +9,7 @@ namespace Hierarchy
 		public RendererComponent()
 		{
 			rect.width = 12;
-
+			
 			rendererButtonTexture = Resources.Instance.GetTexture( Image.kRendererButton);
 			
 			Settings.Instance.AddEventListener( Setting.kRendererShow, SettingsChanged);
@@ -82,7 +82,7 @@ namespace Hierarchy
 						targetRendererMode = -1;
 						return;
 					}
-
+					
 					Undo.RecordObject( renderer, "renderer visibility change");					  
 					renderer.enabled = !enabled;
 					EditorUtility.SetDirty( gameObject);

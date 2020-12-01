@@ -10,7 +10,7 @@ namespace Hierarchy
 		public ErrorComponent()
 		{
 			rect.width = 16; 
-
+			
 			errorIconTexture = Resources.Instance.GetTexture( Image.kErrorIcon);
 			
 			Settings.Instance.AddEventListener( Setting.kErrorShow						   , SettingsChanged);
@@ -39,7 +39,7 @@ namespace Hierarchy
 			showErrorTypeReferenceIsMissing = Settings.Instance.Get<bool>( Setting.kErrorShowReferenceIsMissing);
 			activeColor 					= Settings.Instance.GetColor( Setting.kAdditionalActiveColor);
 			inactiveColor					= Settings.Instance.GetColor( Setting.kAdditionalInactiveColor);
-
+			
 			string ignoreErrorOfMonoBehavioursString = Settings.Instance.Get<string>( Setting.kErrorIgnoreString);
 			if( string.IsNullOrEmpty( ignoreErrorOfMonoBehavioursString) == false) 
 			{
@@ -68,7 +68,7 @@ namespace Hierarchy
 			{
 				bool errorFound = FindError( gameObject, gameObject.GetComponents<Component>());
 			//	bool errorFound = FindError( gameObject, gameObject.GetComponents<MonoBehaviour>());
-
+				
 				if( errorFound != false)
 				{			
 					ColorUtils.SetColor( activeColor);
@@ -95,13 +95,13 @@ namespace Hierarchy
 				if( currentEvent.type == EventType.MouseDown && currentEvent.button == 0 && rect.Contains( currentEvent.mousePosition) != false)
 				{
 					currentEvent.Use();
-
+					
 					errorCount = 0;
 					errorStringBuilder = new System.Text.StringBuilder();
 					
 					FindError( gameObject, gameObject.GetComponents<Component>(), true);
 				//	FindError( gameObject, gameObject.GetComponents<MonoBehaviour>(), true);
-
+					
 					if( errorCount > 0)
 					{
 						EditorUtility.DisplayDialog( 

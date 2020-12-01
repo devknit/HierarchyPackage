@@ -14,25 +14,25 @@ namespace Hierarchy
 		kTreeMapColor								 = 101,
 		kTreeMapEnhanced							 = 102,
 		kTreeMapTransparentBackground				 = 103,
-
+		
 		kSeparatorShow								 = 2,
 		kSeparatorShowRowShading					 = 201,
 		kSeparatorColor 							 = 202,
 		kSeparatorEvenRowShadingColor				 = 203, 	  
 		kSeparatorOddRowShadingColor				 = 204, 	  
-
+		
 		kActivityShow								 = 3,
 		kActivityEditable							 = 301,
 		kActivityShowDuringPlayMode 				 = 302,
-
+		
 		kLockShow									 = 4,
 		kLockEditable								 = 401,
 		kLockShowDuringPlayMode 					 = 402,
-
+		
 		kStaticShow 								 = 5,
 		kStaticEditable 							 = 501,
 		kStaticShowDuringPlayMode					 = 502,
-
+		
 		kErrorShow									 = 6,
 		kErrorShowDuringPlayMode					 = 601,
 		kErrorShowForDisabledComponents 			 = 602,
@@ -42,11 +42,11 @@ namespace Hierarchy
 		kErrorShowComponentIsMissing				 = 606,
 		kErrorShowReferenceIsMissing				 = 607,
 		kErrorIgnoreString							 = 608,
-
+		
 		kRendererShow								 = 7,
 		kRendererEditable							 = 701,
 		kRendererShowDuringPlayMode 				 = 702,
-
+		
 		kTagAndLayerShow							 = 8,
 		kTagAndLayerEditable						 = 801,
 		kTagAndLayerShowDuringPlayMode				 = 802,
@@ -61,12 +61,12 @@ namespace Hierarchy
 		kTagAndLayerTagLabelColor					 = 811,
 		kTagAndLayerLayerLabelColor 				 = 812,
 		kTagAndLayerLabelAlpha						 = 813,
-
+		
 		kChildrenCountShow							 = 9,
 		kChildrenCountShowDuringPlayMode			 = 901,
 		kChildrenCountLabelSize 					 = 902,
 		kChildrenCountLabelColor					 = 903,
-
+		
 		kVerticesAndTrianglesShow					 = 10,
 		kVerticesAndTrianglesShowDuringPlayMode 	 = 1001,
 		kVerticesAndTrianglesCalculateTotalCount	 = 1002,
@@ -75,15 +75,15 @@ namespace Hierarchy
 		kVerticesAndTrianglesLabelSize				 = 1005,
 		kVerticesAndTrianglesVerticesLabelColor 	 = 1006,
 		kVerticesAndTrianglesTrianglesLabelColor	 = 1007,
-
+		
 		kComponentsShow 							 = 11,
 		kComponentsEditable							 = 1101,
 		kComponentsShowDuringPlayMode				 = 1102,
 		kComponentsIconSize 						 = 1103,
 		kComponentsIgnore							 = 1104,
-
+		
 		kComponentsOrder							 = 12,
-
+		
 		kAdditionalIdentation						 = 99,
 		kAdditionalShowModifierWarning				 = 9901,
 		kAdditionalHideIconsIfNotFit				 = 9902,  
@@ -149,7 +149,7 @@ namespace Hierarchy
 		kTreeMapComponent			 = 1001,
 		kComponentsComponent		 = 1002,
 	}
-
+	
 	public class Settings 
 	{
 		public static Settings Instance
@@ -185,26 +185,26 @@ namespace Hierarchy
 			}
 			
 			InitSetting( Setting.kHierarchyExtension					 	 , true);
-
+		
 			InitSetting( Setting.kTreeMapShow								 , true);
 			InitSetting( Setting.kTreeMapColor								 , "39FFFFFF", "905D5D5D");
 			InitSetting( Setting.kTreeMapEnhanced							 , true);
 			InitSetting( Setting.kTreeMapTransparentBackground				 , true);
-
+			
 			InitSetting( Setting.kSeparatorShow 							 , true);
 			InitSetting( Setting.kSeparatorShowRowShading					 , true);
 			InitSetting( Setting.kSeparatorColor							 , "FF303030", "48666666");
 			InitSetting( Setting.kSeparatorEvenRowShadingColor				 , "13000000", "08000000");
 			InitSetting( Setting.kSeparatorOddRowShadingColor				 , "00000000", "00FFFFFF");
-
+			
 			InitSetting( Setting.kActivityShow								 , true);
 			InitSetting( Setting.kActivityEditable							 , true);
 			InitSetting( Setting.kActivityShowDuringPlayMode				 , true);
-
+			
 			InitSetting( Setting.kLockShow									 , true);
 			InitSetting( Setting.kLockEditable								 , true);
 			InitSetting( Setting.kLockShowDuringPlayMode					 , false);
-
+			
 			InitSetting( Setting.kStaticShow								 , true);
 			InitSetting( Setting.kStaticEditable							 , true);
 			InitSetting( Setting.kStaticShowDuringPlayMode					 , false);
@@ -218,11 +218,11 @@ namespace Hierarchy
 			InitSetting( Setting.kErrorShowComponentIsMissing				 , true);
 			InitSetting( Setting.kErrorShowReferenceIsMissing				 , false);
 			InitSetting( Setting.kErrorIgnoreString 						 , "");
-
+			
 			InitSetting( Setting.kRendererShow								 , true);
 			InitSetting( Setting.kRendererEditable							 , true);
 			InitSetting( Setting.kRendererShowDuringPlayMode				 , true);
-
+			
 			InitSetting( Setting.kTagAndLayerShow							 , false);
 			InitSetting( Setting.kTagAndLayerEditable						 , false);
 			InitSetting( Setting.kTagAndLayerShowDuringPlayMode 			 , true);
@@ -236,12 +236,12 @@ namespace Hierarchy
 			InitSetting( Setting.kTagAndLayerTagLabelColor					 , "FFCCCCCC", "FF333333");
 			InitSetting( Setting.kTagAndLayerLayerLabelColor				 , "FFCCCCCC", "FF333333");
 			InitSetting( Setting.kTagAndLayerLabelAlpha 					 , 0.35f);
-
+			
 			InitSetting( Setting.kChildrenCountShow 						 , false);	   
 			InitSetting( Setting.kChildrenCountShowDuringPlayMode			 , true);
 			InitSetting( Setting.kChildrenCountLabelSize					 , (int)HierarchySize.kNormal);
 			InitSetting( Setting.kChildrenCountLabelColor					 , "FFCCCCCC", "FF333333");
-
+			
 			InitSetting( Setting.kVerticesAndTrianglesShow					 , false);
 			InitSetting( Setting.kVerticesAndTrianglesShowDuringPlayMode	 , false);
 			InitSetting( Setting.kVerticesAndTrianglesCalculateTotalCount	 , false);
@@ -250,19 +250,19 @@ namespace Hierarchy
 			InitSetting( Setting.kVerticesAndTrianglesLabelSize 			 , (int)HierarchySize.kNormal);
 			InitSetting( Setting.kVerticesAndTrianglesVerticesLabelColor	 , "FFCCCCCC", "FF333333");
 			InitSetting( Setting.kVerticesAndTrianglesTrianglesLabelColor	 , "FFCCCCCC", "FF333333");
-
+			
 			InitSetting( Setting.kComponentsShow							 , true);
 			InitSetting( Setting.kComponentsEditable						 , false);
 			InitSetting( Setting.kComponentsShowDuringPlayMode				 , true);
 			InitSetting( Setting.kComponentsIconSize						 , (int)HierarchySizeAll.kBig);
 			InitSetting( Setting.kComponentsIgnore							 , "");
-
+			
 			InitSetting( Setting.kComponentsOrder							 , kDefaultOrder);
-
+			
 			InitSetting( Setting.kAdditionalHideIconsIfNotFit				 , true);
 			InitSetting( Setting.kAdditionalIdentation						 , 0);
 			InitSetting( Setting.kAdditionalShowModifierWarning 			 , false);
-
+			
 		#if UNITY_2019_1_OR_NEWER
 			InitSetting( Setting.kAdditionalBackgroundColor 				 , "00383838", "00CFCFCF");
 		#else
@@ -297,7 +297,7 @@ namespace Hierarchy
 		{
 			int settingId = (int)setting;
 			settingsObject.Set( GetSettingName( setting), value);
-
+			
 			if( invokeChanger != false
 			&&	settingChangedHandlerList.ContainsKey( settingId)
 			&&	settingChangedHandlerList[ settingId] != null)
@@ -370,7 +370,7 @@ namespace Hierarchy
 		const string kPrefsDark = "Dark_";
 		const string kPrefsLight = "Light_";
 		const string kSettingsFileName = "SettingsObjectAsset";
-	   	public const string kDefaultOrder = "0;1;2;3;4;5";
+		public const string kDefaultOrder = "0;1;2;3;4;5";
 		public const int kDefaultOrderCount = 6;
 		
 		static Settings instance;
