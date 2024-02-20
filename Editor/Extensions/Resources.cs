@@ -64,7 +64,7 @@ namespace Hierarchy
 			
 			foreach( KeyValuePair<Image, string> resourcePair in kResourcesCommon)
 			{
-				Texture2D texture = new Texture2D( 0, 0, TextureFormat.ARGB32, false, false);
+				Texture2D texture = new Texture2D( 1, 1, TextureFormat.ARGB32, false, false);
 				texture.hideFlags = HideFlags.HideAndDontSave;
 				texture.LoadImage( System.Convert.FromBase64String( resourcePair.Value));
 				textures.Add( resourcePair.Key, texture);
@@ -74,7 +74,7 @@ namespace Hierarchy
 			
 			foreach( KeyValuePair<Image, string> resourcePair in resources)
 			{
-				Texture2D texture = new Texture2D( 0, 0, TextureFormat.ARGB32, false, false);
+				Texture2D texture = new Texture2D( 1, 1, TextureFormat.ARGB32, false, false);
 				texture.hideFlags = HideFlags.HideAndDontSave;
 				texture.LoadImage( System.Convert.FromBase64String( resourcePair.Value));
 				textures.Add( resourcePair.Key, texture);
