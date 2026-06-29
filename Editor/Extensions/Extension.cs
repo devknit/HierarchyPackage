@@ -65,6 +65,37 @@ namespace Hierarchy
 			backgroundColor = Settings.Instance.GetColor( Setting.kAdditionalBackgroundColor);
 			hideIconsIfThereIsNoFreeSpace = Settings.Instance.Get<bool>( Setting.kAdditionalHideIconsIfNotFit);
 		}
+	#if UNITY_6000_4_OR_NEWER
+		public void HierarchyWindowItemOnGUIHandler( EntityId entityId, Rect selectionRect)
+		{
+			try
+			{
+				if( enabled != false)
+				{
+					if( EditorUtility.EntityIdToObject( entityId) is GameObject gameObject)
+					{
+						Rect curRect = selectionRect;
+						curRect.width = EditorGUIUtility.singleLineHeight;
+						curRect.x += selectionRect.width - indentation;
+						
+						float gameObjectNameWidth = hideIconsIfThereIsNoFreeSpace ? 
+							GUI.skin.label.CalcSize( new GUIContent( gameObject.name)).x : 0;
+						DrawComponents( orderedComponents, selectionRect, ref curRect, gameObject, true, 
+							hideIconsIfThereIsNoFreeSpace ? selectionRect.x + gameObjectNameWidth + 20 : 0);
+						
+						errorHandled.Remove( entityId);
+					}
+				}
+			}
+			catch( System.Exception e)
+			{
+				if( errorHandled.Add( entityId) != false)
+				{
+					Debug.LogError( e);
+				}
+			}
+		}
+	#else
 		public void HierarchyWindowItemOnGUIHandler( int instanceId, Rect selectionRect)
 		{
 			try
@@ -94,6 +125,7 @@ namespace Hierarchy
 				}
 			}
 		}
+	#endif
 		void DrawComponents( List<BaseComponent> components, Rect selectionRect, ref Rect rect, GameObject gameObject, bool drawBackground, float minX=50)
 		{
 			BaseComponent component;
@@ -169,7 +201,11 @@ namespace Hierarchy
 			}
 		}
 		
+	#if UNITY_6000_4_OR_NEWER
+		HashSet<EntityId> errorHandled = new HashSet<EntityId>();
+	#else
 		HashSet<int> errorHandled = new HashSet<int>();
+	#endif
 		Dictionary<int, BaseComponent> components;
 		List<BaseComponent> preComponents;
 		List<BaseComponent> orderedComponents;

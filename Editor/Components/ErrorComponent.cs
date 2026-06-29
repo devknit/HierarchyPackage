@@ -193,10 +193,17 @@ namespace Hierarchy
 							{
 								bool missing = false;
 								
+							#if UNITY_6000_4_OR_NEWER
+								if( property.objectReferenceEntityIdValue.IsValid() != false)
+								{
+									missing = true;
+								}
+							#else
 								if( property.objectReferenceInstanceIDValue != 0)
 								{
 									missing = true;
 								}
+							#endif
 								else
 								{
 									if( property.hasChildren != false)

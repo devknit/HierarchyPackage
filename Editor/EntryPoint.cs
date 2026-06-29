@@ -9,11 +9,26 @@ namespace Hierarchy
 	{
 		static EntryPoint()
 		{
+        #if UNITY_6000_4_OR_NEWER
+            EditorApplication.hierarchyWindowItemByEntityIdOnGUI -= HierarchyWindowItemOnGUIHandler;
+            EditorApplication.hierarchyWindowItemByEntityIdOnGUI += HierarchyWindowItemOnGUIHandler;
+        #else
             EditorApplication.hierarchyWindowItemOnGUI -= HierarchyWindowItemOnGUIHandler;
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUIHandler;
+        #endif
             Undo.undoRedoPerformed -= UndoRedoPerformed;
             Undo.undoRedoPerformed += UndoRedoPerformed;
 		}
+    #if UNITY_6000_4_OR_NEWER
+        static void HierarchyWindowItemOnGUIHandler( EntityId entityId, Rect selectionRect)
+        {
+			if( extension == null)
+            {
+				extension = new Extension();
+			}
+			extension.HierarchyWindowItemOnGUIHandler( entityId, selectionRect);
+		}
+    #else
         static void HierarchyWindowItemOnGUIHandler( int instanceId, Rect selectionRect)
         {
 			if( extension == null)
@@ -22,6 +37,7 @@ namespace Hierarchy
 			}
 			extension.HierarchyWindowItemOnGUIHandler( instanceId, selectionRect);
 		}
+    #endif
 		static void UndoRedoPerformed()
         {
             EditorApplication.RepaintHierarchyWindow();          
